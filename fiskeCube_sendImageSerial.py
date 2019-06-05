@@ -5,8 +5,12 @@ import serial
 import cv2
 import struct
 import datetime
-import sys
+import sys, os
 
+
+import os
+dirname = os.path.dirname(__file__)
+# filename = os.path.join(dirname, './data/')
 #####INITIALIZATION
 
 imageList = []
@@ -16,10 +20,10 @@ imageList = []
 # imageList.append(Image.open("data/fiskeCube_CME.bmp"))
 # imageList.append(Image.open("data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
 # imageList.append(Image.open("data/fiskeCube_AURORA.bmp"))
-imageList.append(cv2.imread("data/fiskeCube_SOLAR_MAG.bmp"))
-imageList.append(cv2.imread("data/fiskeCube_CME.bmp"))
-imageList.append(cv2.imread("data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
-imageList.append(cv2.imread("data/fiskeCube_AURORA.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_SOLAR_MAG.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_CME.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_AURORA.bmp"))
 
 
 # ser = serial.Serial()
