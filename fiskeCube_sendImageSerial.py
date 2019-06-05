@@ -33,14 +33,12 @@ ser.baudrate = 2000000
 
 #####Functions
 def sendFrame(thisFrame, currentImage):
-	# framesHeight = currentImage.height #NOT NEEDED --- EACH FRAME IS ONLY 1 PIXEL HIGH
-	# framesWidth = currentImage.width
 	framesWidth = currentImage.shape[1]
 	ledCount = 0
 	stripNum = 0
 
 	print('Frame started at ', datetime.datetime.now())
-
+	print('framesWidth: ', framesWidth)
 	for y in range(0,framesWidth): ### FOR EACH PIXEL IN CURRENT FRAME
 		## OPENCV USES BGR FORMAT FOR COLORS
 		b = currentImage[thisFrame, y, 0]
@@ -62,18 +60,17 @@ def sendFrame(thisFrame, currentImage):
 			ledCount = 0
 			stripNum = stripNum + 1
 
-
 	print('Frame completed at ', datetime.datetime.now())
-
 	ser.write(str.encode('f'))
 	ser.write(str.encode('c'))
 
 
 def runCube():
-	for i in range(0, len(imageList)):	### IMAGE NUMBER < imageList LENGTH
-		for j in range(0, imageList[i].shape[1]):	### FRAME NUMBER < imageList[i] HEIGHT
+	for i in range(0, len(imageList)):				### IMAGE NUMBER < imageList LENGTH
+		for j in range(0, (imageList[i].shape[0])):	### FRAME NUMBER < imageList[i] HEIGHT
 			sendFrame(j, imageList[i])
-
+			print('i: ', i)
+			print('j: ', j)
 
 
 
