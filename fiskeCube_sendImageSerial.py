@@ -7,8 +7,6 @@ import struct
 import datetime
 import sys, os
 
-
-import os
 dirname = os.path.dirname(__file__)
 # filename = os.path.join(dirname, './data/')
 #####INITIALIZATION
@@ -25,14 +23,12 @@ imageList.append(cv2.imread(dirname + "/data/fiskeCube_CME.bmp"))
 imageList.append(cv2.imread(dirname + "/data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
 imageList.append(cv2.imread(dirname + "/data/fiskeCube_AURORA.bmp"))
 
-
 # ser = serial.Serial()
 # ser.port = serial.tools.list_ports.comports()[0]
 # ser.open()
 
 ser = serial.Serial('/dev/ttyACM0') ## CHANGE TO WHATEVER PORT IS BEING USED
 ser.baudrate = 2000000
-
 
 s = str.encode('s') ### START READ VAR
 f = str.encode('f') ### SHOW LEDS VAR
