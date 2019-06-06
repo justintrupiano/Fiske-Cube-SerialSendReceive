@@ -18,10 +18,10 @@ imageList = []
 # imageList.append(Image.open("data/fiskeCube_CME.bmp"))
 # imageList.append(Image.open("data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
 # imageList.append(Image.open("data/fiskeCube_AURORA.bmp"))
-imageList.append(cv2.imread(dirname + "data/fiskeCube_SOLAR_MAG.bmp"))
-imageList.append(cv2.imread(dirname + "data/fiskeCube_CME.bmp"))
-imageList.append(cv2.imread(dirname + "data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
-imageList.append(cv2.imread(dirname + "data/fiskeCube_AURORA.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_SOLAR_MAG.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_CME.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
+imageList.append(cv2.imread(dirname + "/data/fiskeCube_AURORA.bmp"))
 
 # ser = serial.Serial()
 # ser.port = serial.tools.list_ports.comports()[0]
