@@ -8,4 +8,5 @@ Code to run and manage the 3D Cube at the Fiske Planetarium.
       - serial
       - cv2 (OpenCV)
       - struct
-      - datetime, sys, os
+      - datetime
+      - os
