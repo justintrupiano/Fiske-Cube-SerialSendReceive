@@ -7,25 +7,19 @@ import struct
 import datetime
 import sys, os
 
-dirname = os.path.dirname(__file__)
+dataDirName = os.path.dirname(__file__) + '/data/'
 # filename = os.path.join(dirname, './data/')
 #####INITIALIZATION
 
-imageList = []
 
 ## LOAD ALL THE IMAGES INTO AN ARRAY OF IMAGES
-# imageList.append(Image.open("data/fiskeCube_SOLAR_MAG.bmp"))
-# imageList.append(Image.open("data/fiskeCube_CME.bmp"))
-# imageList.append(Image.open("data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
-# imageList.append(Image.open("data/fiskeCube_AURORA.bmp"))
-imageList.append(cv2.imread(dirname + "/data/fiskeCube_SOLAR_MAG.bmp"))
-imageList.append(cv2.imread(dirname + "/data/fiskeCube_CME.bmp"))
-imageList.append(cv2.imread(dirname + "/data/fiskeCube_EARTH_MAG_CLOSE.bmp"))
-imageList.append(cv2.imread(dirname + "/data/fiskeCube_AURORA.bmp"))
+imageList = []
+for filename in os.listdir(dataDirName):
+	if filename.endswith(".bmp"):
+		imageList.append(cv2.imread(dataDirName + filename))
+	else:
+		continue
 
-# ser = serial.Serial()
-# ser.port = serial.tools.list_ports.comports()[0]
-# ser.open()
 
 ser = serial.Serial('/dev/ttyACM0') ## CHANGE TO WHATEVER PORT IS BEING USED
 ser.baudrate = 2000000
