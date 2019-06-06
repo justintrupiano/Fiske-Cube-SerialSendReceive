@@ -14,7 +14,7 @@ dataDirName = os.path.dirname(__file__) + '/data/'
 
 ## LOAD ALL THE IMAGES INTO AN ARRAY OF IMAGES
 imageList = []
-for filename in os.listdir(dataDirName):
+for filename in sorted(os.listdir(dataDirName)):
 	if filename.endswith(".bmp"):
 		imageList.append(cv2.imread(dataDirName + filename))
 	else:
