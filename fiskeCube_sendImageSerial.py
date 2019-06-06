@@ -66,7 +66,7 @@ def sendFrame(thisFrame, currentImage):
 def runCube():
 	for i in range(0, len(imageList)):				### IMAGE NUMBER < imageList LENGTH
 		# print('Viz number', i , 'started at', datetime.datetime.now())
-		sys.stdout.write('\rViz number ' + str(i) + ' started at ' + str(datetime.datetime.now()))
+		sys.stdout.write('Viz number ' + str(i) + ' started at ' + str(datetime.datetime.now()))
 
 		for j in range(0, (imageList[i].shape[0])):	### FRAME NUMBER < imageList[i] HEIGHT
 			sendFrame(j, imageList[i])
